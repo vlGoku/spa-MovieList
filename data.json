@@ -1,0 +1,62 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Killers of the Flower Moon",
+      "director": "Martin Scorcese",
+      "runtime": 206,
+      "social": "@killersoftheflowermoon",
+      "img": "https://upload.wikimedia.org/wikipedia/en/8/88/Killers_of_the_Flower_Moon_film_poster.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Demon Slayer, to the Hashira Training",
+      "director": "Haruo Sotozaki",
+      "runtime": 130,
+      "social": "@DemonSlayerUSA",
+      "img": "https://m.media-amazon.com/images/M/MV5BNWFkNzI5NDQtY2QyZS00NGE2LWJiNDEtMTI5ZTFmNDE0ZjcwXkEyXkFqcGdeQXVyNjk1NzU1Mjk@._V1_FMjpg_UX1000_.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Night Swim",
+      "director": "Bryce McGuire",
+      "runtime": 98,
+      "social": "@NightSwimMovie",
+      "img": "https://pbs.twimg.com/media/F7rtL2XbQAAmc_c?format=jpg&name=large"
+    },
+    {
+      "title": "Aquaman and the Lost Kingdom",
+      "director": "James Wan",
+      "social": "@aquamanmovie",
+      "img": "https://pbs.twimg.com/media/F-mpCT-XsAErruV.jpg",
+      "runtime": "125",
+      "id": "4"
+    },
+    {
+      "id": "o5favn2",
+      "createdAt": 1708425314761,
+      "title": "New Movie",
+      "director": "New Director",
+      "runtime": 0,
+      "img": "",
+      "social": ""
+    },
+    {
+      "id": "t4e87rz",
+      "createdAt": 1708425955777,
+      "title": "New Movie",
+      "director": "New Director",
+      "runtime": 0,
+      "img": "",
+      "social": ""
+    },
+    {
+      "title": "New Movie",
+      "director": "New Director",
+      "social": "",
+      "img": "",
+      "runtime": "0",
+      "id": "o3xmm0x"
+    }
+  ]
+}

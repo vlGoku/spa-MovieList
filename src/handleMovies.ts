@@ -1,4 +1,5 @@
 import sortBy from "sort-by";
+import { matchSorter } from "match-sorter";
 
 export type Movie = {
   id: number;
@@ -11,24 +12,25 @@ export type Movie = {
 
 let fakeCache: { [key: string]: boolean } = {};
 
-function fakeDelay(key: string) {
+function fakeDelay(key?: string) {
   if (!key) {
     fakeCache = {};
   }
-  if (fakeCache[key]) {
+  if (fakeCache[key!]) {
     return;
   }
-  fakeCache[key] = true;
+  fakeCache[key!] = true;
   return new Promise((resolve) => {
     setTimeout(resolve, 1000);
   });
 }
 
-export async function getMovies() {
-  await fakeDelay(`getMovies`);
+export async function getMovies(query?: string) {
+  await fakeDelay(`getMovies: ${query}`);
   let movies: Movie[] = await fetch("http://localhost:5001/movies").then(
     (res) => res.json()
   );
+  if (query) return matchSorter(movies, query, { keys: ["title"] });
   return movies.sort(sortBy("title", "createdAt")) ?? [];
 }
 
@@ -71,4 +73,14 @@ export async function updateMovie(id: string, movie: Movie) {
     body: JSON.stringify(movie),
   });
   return movie;
+}
+
+export async function deleteMovie(id: string) {
+  await fakeDelay();
+  await fetch(`http://localhost:5001/movies/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 }

@@ -3,6 +3,12 @@ import { getMovie } from "../handleMovies";
 
 export async function loader({ params }: { params: { id: string } }) {
   const movie = await getMovie(params.id);
+  if (!movie) {
+    throw new Response("Movie not found", {
+      status: 404,
+      statusText: "Not Found",
+    });
+  }
   return { movie };
 }
 
@@ -35,13 +41,7 @@ export default function Movie() {
           <Form action="edit">
             <button type="submit">Edit</button>
           </Form>
-          <Form
-            method="post"
-            action="destroy"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <Form method="post" action="destroy">
             <button type="submit">Delete</button>
           </Form>
         </div>
